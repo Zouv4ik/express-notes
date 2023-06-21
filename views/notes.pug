@@ -1,0 +1,35 @@
+doctype html
+html 
+    form(action="/api/note" method="POST")
+        input(type="text" name="ownerId" value=user.id)
+        input(type="text" name="owner" value=user.username)
+        input(type="text" name="title")
+        input(type="text" name="content")
+        input(type="submit")
+    span(id="span")
+    div(id="div")   
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js") 
+    script.
+        user = !{JSON.stringify(user)}
+        window.onload = function() {
+            $.ajax({
+            url: "/api/getnotes",
+            type: "POST",
+            dataType: "json",
+            data: {id: user.id},
+            success: function(response) {
+                alert(JSON.stringify(response))
+                console.log(response.length)
+                for(var i=0; i<response.length; i++){
+                    var newSpan = document.createElement('span');
+                    newSpan.innerText = JSON.stringify(response[i]);
+                    console.log(response[i])
+                }                                     
+                console.log(response);
+            },
+            error: function(xhr, status, error) {
+            // Обработка ошибки
+                console.error(error);
+            }
+        });
+        }

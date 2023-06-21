@@ -1,0 +1,37 @@
+{
+  "name": "express-notes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js -e js,ts,pug\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.15.0",
+    "@types/bcrypt": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.2",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "concurrently": "^8.2.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.0",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "handlebars": "^4.7.7",
+    "jquery": "^3.7.0",
+    "jsonwebtoken": "^9.0.0",
+    "nodemon": "^2.0.22",
+    "prisma": "^4.15.0",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.3.1",
+    "typescript": "^5.1.3"
+  }
+}
